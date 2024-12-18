@@ -1,0 +1,48 @@
+.navbar{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar .brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .brand p{
+    color: white;
+    text-decoration: none;
+}
+.navbar .brand img{
+    height: 100px;
+    width: 100px;
+}
+.navbar .categories{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbar .category{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+}
+.navbar .category-active{
+    color: rgba(52, 132, 185, 0.801);
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+
+}
+.divCart{
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: center;
+}
+.cartwidget{
+    font-size: 35px;
+}
