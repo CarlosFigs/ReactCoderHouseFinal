@@ -1,12 +1,16 @@
-import React from 'react'
 import { RiShoppingCart2Line } from 'react-icons/ri'
-const CartWidget = () => {
-  return (
-    <div className='divCart'>
-      <RiShoppingCart2Line className='cartwidget'/>
-      <p>1</p>
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
-    </div>
+const CartWidget = () => {
+  const {totalQuantity}=useContext(CartContext)  
+  let quantity =totalQuantity()
+  return (
+    <Link to="/cart" className='divCart'>
+      <RiShoppingCart2Line className='cartwidget'/>
+      <p>{quantity!==0 && quantity}</p>
+    </Link>
   )
 }
 

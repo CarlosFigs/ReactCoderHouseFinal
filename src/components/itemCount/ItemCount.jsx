@@ -1,11 +1,27 @@
 import React from 'react'
-import { getProducts } from "../../data/data";
-import { useEffect } from 'react';
+import { useState } from 'react';
+// aqui estan los botones y sus funcionalidades 
+const ItemCount = ({ stock, addProductInCart }) => {
+  const [count, setCount] = useState(1);
 
-const itemCount = () => {
+  const handleClickRemove = () => {
+    if (count > 1) {
+      setCount(count - 1)
+    }
+  }
+  const handleClickAdd = () => {
+    if(count < stock){
+      setCount(count + 1)
+    }
+  }
   return (
-    <button>button</button>
+    <div>
+      <button onClick={handleClickRemove} id='botonEliminar'>-</button>
+      <p>{count}</p>
+      <button onClick={handleClickAdd} id='botonSumar'>+</button>
+      <button onClick={ ()=>addProductInCart(count)} id='agregarProducto'>Agregar Producto</button>
+    </div>
   )
 }
 
-export default itemCount
+export default ItemCount

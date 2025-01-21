@@ -42,6 +42,8 @@
     padding: 0 5px;
     align-items: center;
     justify-content: center;
+    color: white;
+    text-decoration: none;
 }
 .cartwidget{
     font-size: 35px;

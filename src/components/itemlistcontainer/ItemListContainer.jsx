@@ -1,9 +1,9 @@
 // componente principal que recibe y ejecuta el fetch.. lo envia al componente que lo maneja
 import { useEffect, useState } from 'react'
 import { getProducts } from '../../data/data.js'
-import ItemList from './ItemList'
+import ItemList from './ItemList.jsx'
 import { useParams } from 'react-router-dom'
-import Loading from '../loading/Loading.jsx'
+import Loading from '../Loading/Loading.jsx'
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
