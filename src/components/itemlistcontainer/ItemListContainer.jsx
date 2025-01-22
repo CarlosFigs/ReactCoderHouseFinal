@@ -28,6 +28,7 @@ const ItemListContainer = ({ saludo }) => {
       setProducts(data)
     } catch (error) {
       console.log(error);
+      setProducts([])
       
     }finally{
       //aqui cerramos el loading

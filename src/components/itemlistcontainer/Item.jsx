@@ -4,9 +4,9 @@ import './Item.css'
 const Item = ({product}) => {
   return (
     <Link to={"/detail/"+product.id} className='productCard'>
-      <p>{product.name}</p>
+      <p id='product-name'>{product.name}</p>
       <img src={product.img} alt=""/>
-      <p>{product.price} $</p>
+      <p id="product-price">{product.price} $</p>
     </Link>
   )
 }

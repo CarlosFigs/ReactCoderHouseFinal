@@ -1,8 +1,11 @@
 import { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Timestamp, collection, addDoc } from 'firebase/firestore'
+import { toast } from 'react-toastify'
 import FormCheckout from './FormCheckout'
 import db from '../../db/db.js'
+import validateForm from '../../utils/ValidateForm.js'
+import Guia from './Guia.jsx'
 const Checkout = () => {
     const [dataForm, setDataForm] = useState({
         fullname: "",
@@ -10,10 +13,14 @@ const Checkout = () => {
         email: ""
     })
     const [orderID, setorderID] = useState(null)
-    const { cart, totalPrice } = useContext(CartContext)
+    const { cart, totalPrice,setCart } = useContext(CartContext)
+    const clearCart=()=>{
+        setCart([])
+    }
+
     const handleOnChangeInputs = (event) => {
         setDataForm({ ...dataForm, [event.target.name]: event.target.value })
-    }
+    }    
     const handleSubmitForm = async (event) => {
         event.preventDefault()
         const order = {
@@ -22,14 +29,20 @@ const Checkout = () => {
             total: totalPrice(),
             date: Timestamp.fromDate(new Date())
         }
-        uploadOrder(order)
+        const response = await validateForm(dataForm)
+        if(response.status === "succes"){
+            await uploadOrder(order)
+            toast.info("Orden enviada correctamente")            
+        }else{
+            toast.warn(response.message)
+        }
     }
     const uploadOrder = async (newOrder) => {
         try {
             const orderRef = collection(db, "orders")
             const response = await addDoc(orderRef, newOrder)
             setorderID(response.id)
-
+            clearCart()
         } catch (error) {
             console.log(error)
         }
@@ -39,10 +52,7 @@ const Checkout = () => {
 
             {
                 orderID ? (
-                    <div>
-                        <h2>Compra completada guarde su N° de guia</h2>
-                        <h3>{orderID}</h3>
-                    </div>
+                    <Guia orderID={orderID}/>
                 ) : (
                     <FormCheckout dataForm={dataForm} handleSubmitForm={handleSubmitForm} handleOnChangeInputs={handleOnChangeInputs} />
                 )

@@ -1,10 +1,119 @@
-.itemDetail{
-    height: 80vh;
+/* Estilo para el contenedor de los detalles del producto */
+.itemDetailContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 30vh;
+    padding: 20px;
+    background-color: #f9f9f9bb;
 }
-.itemDetail img{
-    width: 200px;
-    height: 200px;
+
+/* Estilo general para los detalles del producto */
+.itemDetail {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 7px rgba(0,0,0,0.3);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Estilo para las imágenes de los productos */
+.itemDetail img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Estilo para los títulos del producto */
+.itemDetail h2 {
+    font-size: 1.8rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el botón de eliminar */
+#botonEliminar {
+    background-color: #e0e0e0;
+    border: none;
+    color: #1e293b;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    transition: background-color 0.4s ease-in-out;
+}
+#botonEliminar:hover{
+    background-color: #0f172a;
+    color: white;
+}
+
+/* Estilo para el botón de sumar */
+#botonSumar {
+    background-color: #e0e0e0;
+    border: none;
+    color: #1e293b;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    transition: background-color 0.4s ease-in-out;
+}
+#botonSumar:hover{
+    background-color: #0f172a;
+    color: white;
+}
+
+/* Estilo para el botón de agregar producto */
+#agregarProducto {
+    background-color: #1e293b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#agregarProducto:hover {
+    background-color: #0f172a;
+}
+
+/* Estilo para los controles de la cantidad */
+.botones {
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #1e293b;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+/* Estilo para mostrar la cantidad */
+.botones p {
+    font-size: 1.2rem;
+    color: #1e293b;
+}
+#end-shop{
+    text-decoration: none;
+    color: #1e293b;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.6s;
+}
+#end-shop:hover{
+    background-color: #0f172a;
+    color: white;
 }

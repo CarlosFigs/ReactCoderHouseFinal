@@ -1,4 +1,5 @@
 import { createContext,useEffect,useState } from "react";
+import { toast } from "react-toastify";
 
 const CartContext = createContext()
 
@@ -15,12 +16,14 @@ useEffect(()=>{
         const indice = cart.findIndex((product)=> product.id === newProduct.id )
         if(indice === -1){
             //si el indice es -1 significa que no se encuentra en el carro por lo tanto se agrega
-            setCart([...cart,newProduct])            
+            setCart([...cart,newProduct])
+            toast.success("Producto añadido correctamente")         
         }else{
             //si el indice es diferente de -1 significa que se encuentra en alguna posicion del array, se modifica solo la cantidad
             const newCart = [...cart]
             newCart[indice].quantity = newCart[indice].quantity + newProduct.quantity
             setCart(newCart)
+            toast.success("Producto añadido correctamente")
         }
     }
     const totalQuantity =()=>{
@@ -31,16 +34,18 @@ useEffect(()=>{
         const price = cart.reduce((total,producto)=>total+(producto.price*producto.quantity),0)
         return price
     }
-    const deleteProducts =(idProduct)=>{
+    const deleteProducts =(idProduct,productName)=>{
         const filterProducts = cart.filter((product)=>product.id!==idProduct)
         setCart(filterProducts)
+        toast.info("El producto "+productName+" ha sido eliminado")
     }
     const deleteAllProducts =()=>{
         setCart([])
+        toast.info("Todos los productos han sido eliminados del carrito")
     }
 
     return(
-    <CartContext.Provider value={{addProducts,cart,totalQuantity,totalPrice,deleteProducts,deleteAllProducts}}>
+    <CartContext.Provider value={{addProducts,cart,totalQuantity,totalPrice,deleteProducts,deleteAllProducts,setCart}}>
         {children}
     </CartContext.Provider>
     )

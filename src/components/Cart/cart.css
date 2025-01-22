@@ -1,0 +1,158 @@
+/* Estilo para el contenedor principal del carrito */
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Lista de productos del carrito */
+  .cart-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Elementos individuales del carrito */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  /* Información del producto */
+  .item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Imagen del producto */
+  .item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Nombre del producto */
+  .item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1e293b;
+  }
+  
+  /* Precio y cantidad del producto */
+  .item-price,
+  .item-quantity {
+    font-size: 1rem;
+    color: #64748b;
+  }
+  
+  /* Botón para eliminar productos individuales */
+  .delete-button {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #c53030;
+  }
+  
+  /* Contenedor inferior del carrito */
+  .bottom-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  /* Precio total */
+  .total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e293b;
+  }
+  
+  /* Botón para eliminar todos los productos */
+  .delete-all-button {
+    background-color: #f56565;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete-all-button:hover {
+    background-color: #e53e3e;
+  }
+  
+  /* Botón para proceder al checkout */
+  .checkout-button {
+    background-color: #374151;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  .checkout-button:hover {
+    background-color: #212325;
+  }
+/* Estilo para el contenedor principal */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* Ocupa toda la pantalla */
+  background-color: #f8f9fa; /* Fondo claro */
+  color: #1e293b; /* Texto oscuro */
+  padding: 20px;
+}
+
+/* Estilo para el título */
+.empty-cart h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #374151; /* Gris oscuro */
+}
+
+/* Estilo para el enlace */
+#link-inicio {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #374151; /* Azul */
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #374151;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover en el enlace */
+#link-inicio:hover {
+  background-color: #374151 ; 
+  color: #ffffff; 
+}
+  

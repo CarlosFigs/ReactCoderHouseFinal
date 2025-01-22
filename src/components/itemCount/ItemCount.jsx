@@ -10,16 +10,18 @@ const ItemCount = ({ stock, addProductInCart }) => {
     }
   }
   const handleClickAdd = () => {
-    if(count < stock){
+    if (count < stock) {
       setCount(count + 1)
     }
   }
   return (
     <div>
-      <button onClick={handleClickRemove} id='botonEliminar'>-</button>
-      <p>{count}</p>
-      <button onClick={handleClickAdd} id='botonSumar'>+</button>
-      <button onClick={ ()=>addProductInCart(count)} id='agregarProducto'>Agregar Producto</button>
+      <div className='botones'>
+        <button onClick={handleClickRemove} id='botonEliminar'>-</button>
+        <p>{count}</p>
+        <button onClick={handleClickAdd} id='botonSumar'>+</button>
+      </div>
+      <button onClick={() => addProductInCart(count)} id='agregarProducto'>Agregar Producto</button>
     </div>
   )
 }

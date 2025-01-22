@@ -1,4 +1,5 @@
 import React from 'react'
+import "./checkout.css"
 
 const FormCheckout = ({dataForm, handleOnChangeInputs, handleSubmitForm}) => {
   return (
