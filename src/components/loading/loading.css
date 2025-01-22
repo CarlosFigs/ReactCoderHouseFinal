@@ -4,4 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
+}
+.loading p{
+    font-size: 30px;
 }

@@ -1,9 +1,15 @@
-import { createContext,useState } from "react";
+import { createContext,useEffect,useState } from "react";
 
 const CartContext = createContext()
 
 const CartProvider= ({children})=>{
-    const [cart,setCart]= useState([])
+    const cartLocalStorage = JSON.parse(localStorage.getItem("carrito"))
+    const [cart,setCart]= useState(cartLocalStorage?cartLocalStorage:[])
+// el siguiente useEffect tiene la funcionalidad de que la variable de estado cart se modifique guarde la info en el localStorage
+useEffect(()=>{
+    localStorage.setItem("carrito",JSON.stringify(cart))
+},[cart])
+
     const addProducts = (newProduct)=>{
         // findIndex para comparar el indice del producto nuevo contra el que se encuentra en cart
         const indice = cart.findIndex((product)=> product.id === newProduct.id )

@@ -4,6 +4,7 @@ import { SyncLoader } from 'react-spinners'
 const Loading = () => {
   return (
     <div className='loading'>
+        <p>Loading</p>
         <SyncLoader color="black" />
     </div>
   )
