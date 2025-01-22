@@ -37,7 +37,7 @@ form {
   }
   
   /* Botón de enviar */
-  form button {
+#formButton {
     padding: 10px 15px;
     font-size: 1rem;
     font-weight: 600;
@@ -50,7 +50,7 @@ form {
   }
   
   /* Efecto hover en el botón */
-  form button:hover {
+#formButton:hover {
     background-color: #0f172a; /* Fondo más oscuro */
   }
   .order-guide {

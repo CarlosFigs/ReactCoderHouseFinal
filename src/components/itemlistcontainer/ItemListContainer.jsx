@@ -5,17 +5,24 @@ import { useParams } from 'react-router-dom'
 import ItemList from './ItemList.jsx'
 import Loading from '../Loading/Loading.jsx'
 import db from "../../db/db.js"
+import NotFound from '../Error/NotFound.jsx'
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
   const [loading,setLoading]=useState(false)
   const { idCategory } = useParams()
+  const [error,setError]=useState(false)
+  const categoriasValidas = ["franelas","pantalones","zapatos","chaquetas"]
 
   //llamada de datos de firestore DB con async await
   const collectionName = collection(db,"products")
   const getProducts = async (idCategory)=>{
     try {
       let dataDB;
+//vamos a validad primero las categorias que vienen de la web
+      if(idCategory && !categoriasValidas.includes(idCategory)){
+        setError(true)
+      }
       if(idCategory != null){
         const filter = query(collectionName, where("category", "==", idCategory))
         dataDB = await getDocs(filter)
@@ -37,13 +44,18 @@ const ItemListContainer = ({ saludo }) => {
   }
   useEffect(() => {
     setLoading(true)
+    setError(false)
     getProducts(idCategory)
   }, [idCategory])
+
+  if(error){
+    return <NotFound/>
+  }
   return (
     <div>
       <h1>{saludo}</h1>
       {
-        loading ===true ? (<Loading/>):( <ItemList products={products} />)
+        loading ? (<Loading/>):( <ItemList products={products} />)
       }
     </div>
   )

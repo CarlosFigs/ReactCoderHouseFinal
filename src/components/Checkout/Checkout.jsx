@@ -6,11 +6,13 @@ import FormCheckout from './FormCheckout'
 import db from '../../db/db.js'
 import validateForm from '../../utils/ValidateForm.js'
 import Guia from './Guia.jsx'
+import "./checkout.css"
 const Checkout = () => {
     const [dataForm, setDataForm] = useState({
         fullname: "",
         phone: "",
-        email: ""
+        email: "",
+        email2:""
     })
     const [orderID, setorderID] = useState(null)
     const { cart, totalPrice,setCart } = useContext(CartContext)
@@ -23,8 +25,17 @@ const Checkout = () => {
     }    
     const handleSubmitForm = async (event) => {
         event.preventDefault()
+        const {email1, email2}=dataForm;
+        if(email1 !== email2){
+            toast.warn("los correos no coinciden por favor corregir")
+            return;
+        }
         const order = {
-            buyer: { ...dataForm },
+            buyer: {
+                fullname:dataForm.fullname,
+                phone:dataForm.phone,
+                email:dataForm.email
+             },
             products: [...cart],
             total: totalPrice(),
             date: Timestamp.fromDate(new Date())
