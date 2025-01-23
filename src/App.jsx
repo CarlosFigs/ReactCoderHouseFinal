@@ -4,9 +4,9 @@ import { ToastContainer } from 'react-toastify'
 import ItemListContainer from './components/iItemListContainer/ItemListContainer.jsx'
 import NavBar from './components/navbar/NavBar.jsx'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer.jsx'
-import Cart from './components/cart/Cart.jsx'
-import NotFound from './components/error/NotFound.jsx'
-import Checkout from './components/checkout/Checkout.jsx'
+import Cart from './components/Cart/Cart.jsx'
+import NotFound from './components/Error/NotFound.jsx'
+import Checkout from './components/Checkout/Checkout.jsx'
 import './App.css'
 function App() {
   return (
