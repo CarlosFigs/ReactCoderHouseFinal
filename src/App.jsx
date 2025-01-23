@@ -1,12 +1,12 @@
 import { CartProvider } from './context/CartContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import ItemListContainer from './components/Itemlistcontainer/ItemListContainer'
-import NavBar from './components/Navbar/NavBar'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import Cart from './components/cart/Cart'
-import NotFound from './components/Error/NotFound'
-import Checkout from './components/Checkout/Checkout'
+import ItemListContainer from './components/Itemlistcontainer/ItemListContainer.jsx'
+import NavBar from './components/Navbar/NavBar.jsx'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
+import Cart from './components/cart/Cart.jsx'
+import NotFound from './components/Error/NotFound.jsx'
+import Checkout from './components/Checkout/Checkout.jsx'
 import './App.css'
 function App() {
   return (
