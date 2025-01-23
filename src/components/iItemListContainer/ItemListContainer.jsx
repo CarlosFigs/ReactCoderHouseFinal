@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { collection,getDocs, query,where } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList.jsx'
-import Loading from '../Loading/Loading.jsx'
+import Loading from '../loading/Loading.jsx'
 import db from "../../db/db.js"
 import NotFound from '../Error/NotFound.jsx'
 

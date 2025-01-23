@@ -2,7 +2,7 @@ import { useContext,useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import "./itemDetail.css"
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../itemCount/ItemCount'
 
 const ItemDetail = ({ product }) => {
   //estado que controla si se muestra el componente itemCount
