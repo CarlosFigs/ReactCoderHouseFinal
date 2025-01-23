@@ -1,7 +1,7 @@
 import { CartProvider } from './context/CartContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import ItemListContainer from './components/Itemlistcontainer/ItemListContainer.jsx'
+import ItemListContainer from './components/iItemListContainer/ItemListContainer.jsx'
 import NavBar from './components/Navbar/NavBar.jsx'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
 import Cart from './components/Cart/Cart.jsx'
