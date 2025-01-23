@@ -23,6 +23,7 @@ const ItemListContainer = ({ saludo }) => {
       if(idCategory && !categoriasValidas.includes(idCategory)){
         setError(true)
       }
+      //se valida que el idCategory sea diferente de null y que efectivamente traiga un valor
       if(idCategory != null){
         const filter = query(collectionName, where("category", "==", idCategory))
         dataDB = await getDocs(filter)
