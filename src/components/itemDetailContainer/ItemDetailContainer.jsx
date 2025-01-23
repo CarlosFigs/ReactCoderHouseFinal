@@ -4,7 +4,7 @@ import { doc, getDoc } from 'firebase/firestore'
 import db from "../../db/db.js"
 import ItemDetail from './ItemDetail.jsx'
 import Loading from '../loading/Loading.jsx'
-import NotFound from '../Error/NotFound.jsx'
+import NotFound from '../error/NotFound.jsx'
 const ItemDetailContainer = () => {
     const [product, setProducts] = useState({});
     const { idProduct } = useParams()

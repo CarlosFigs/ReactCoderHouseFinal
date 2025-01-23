@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import ItemList from './ItemList.jsx'
 import Loading from '../loading/Loading.jsx'
 import db from "../../db/db.js"
-import NotFound from '../Error/NotFound.jsx'
+import NotFound from '../error/NotFound.jsx'
 
 const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState([])
